@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="es"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="es"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="es"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="es"> <!--<![endif]-->
+<head>
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Por Tutatis · Nosotros</title>
+	<meta name="description" content="" />
+	<meta name="author" content="Fauna DG" />
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="css/bootstrap-responsive.css" />
+	<link rel="stylesheet" href="css/portutatis.css" />
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!-- Favicons
+  ================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+	
+</head>
+<body>
+	<!-- Layout
+  ================================================== -->
+	<div class="container">
+		<div class="row">
+			<div class="span4">
+            	<h1>NOSOTROS</h1>
+				<div class="volver"><a href="index.html">VOLVER</a></div>
+			</div>
+			<div class="span8">
+				<h2>Martin Barros Méndez Trongé</h2>
+				<p>Egresó de diseñador de Imagen y Sonido en la Universidad de Buenos Aires. Su carrera profesional comienza como productor en 1995. Alternando en publicidad, televisión y dirección de teatro. Dedicándose por completo a la TV como productor ejecutivo de Campeones (canal 7) durante 4 años.</p>
+				<p>Su curiosidad y las ganas de contar audiovisualmente lo llevó a tomar la cámara y dedicarse de lleno a narrar a través del lente como camarógrafo y realizador en todo tipo de proyectos (Communication and Bussines, MTV, Endemol, Discovery, Kapow, Cosmo TV). Pudiendo así, dar su impronta y subjetividad que necesitaba transmitir. Eso lo condujo a dirigir tanto proyectos personales como de terceros.</p>
+				<h2>Gustavo Ariel Hazan</h2>
+                <p>Abandonó la carrera de Economista en la Universidad de Buenos Aires a 3 materias de recibirse y completó la de Productor de TV en TEA Imagen en 2001. Donde luego trabajó como profesor entre 2005 y 2010.</p>
+                <p>Ha trabajado en todo tipo de programas de TV. Siempre con una tendencia al área periodística y documental.</p>
+                <p>Como productor periodístico trabajó en La Liga (Telefe), Puntodoc (America),  Cámara Testigo (America), La Fábrica (Discovery Channel). Y como productor Ejecutivo realizó Cárceles (Telefe), Policías en Acción (Canal 13), Cuestión de Peso (Canal 13), La Mamá del Año (Canal 13), Argentinos al Volante (A24), Chicas Salvajes (Cosmo TV).</p>
+                <p>Su entrevista favorita que ha realizado en Tv, se llamo "Pommery". Y aquí quiere compartirla.</p>
+                <iframe class="entrevista" src="http://www.youtube-nocookie.com/embed/QspwM1-trQA?rel=0" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div><!-- container -->
+	<footer>
+    </footer>
+	<!-- Scripts
+  ================================================== -->
+  	<script src="js/jquery.min-1.8.2.js"></script>
+	<script src="js/bootstrap.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function () {
+			$("html").hide().fadeIn(500);
+		});
+		$(document).ready(function(){
+			$('iframe').each(function(){
+				  var url = $(this).attr("src");
+				  var char = "?";
+				  if(url.indexOf("?") != -1){
+						  var char = "&";
+				   }
+				  $(this).attr("src",url+char+"wmode=transparent");
+			});
+		});
+	</script>    
+</body>
+</html>

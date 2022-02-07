@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="es"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="es"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="es"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="es"> <!--<![endif]-->
+<head>
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Por Tutatis</title>
+	<meta name="description" content="" />
+	<meta name="author" content="Fauna DG" />
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="css/bootstrap-responsive.css" />
+	<link rel="stylesheet" href="css/portutatis.css" />
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!-- Favicons
+  ================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+	
+	<style>
+	html { 
+	background: url("images/ciudad.png") bottom fixed;
+	-webkit-background-size: 1920px 1080px;
+	-moz-background-size: 1920px 1080px;
+	-o-background-size: 1920px 1080px;
+	background-size: 1920px 1080px; 
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.images/ciudad.png', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/ciudad.png', sizingMethod='scale')";
+	/* The url is relative to the document, not to the css file! */
+    /* Prefer absolute urls to avoid confusion. */
+    -ms-behavior: url(backgroundsize.min.htc);
+	}
+	body{
+		overflow:hidden;
+		margin:-20px;
+	}
+	.container{
+		margin-left:auto !important;
+		margin-right:auto;
+	}
+	</style>
+</head>
+<body>
+
+	<!-- Layout
+	================================================== -->
+	<canvas id="micanvas" height="300" width="1920">Tu navegador no soporta canvas</canvas>
+
+	<div class="container">
+		<div class="span12" id="logo">
+			<img src="images/logo.png" alt="Por Tutatis" />
+		</div>
+
+		<div class="row" id="menu">
+			<div class="span2 offset1 botones">
+				<a href="nosotros.html">NOSOTROS</a>				
+			</div>
+			<div class="span2 botones">
+				<a href="trabajos.html">TRABAJOS</a>				
+			</div>
+            <div class="span2 botones">
+				<a href="servicios.html">SERVICIOS</a>				
+			</div>
+			<div class="span2 botones">
+				<a href="otras.html">OTRAS COSAS</a>				
+			</div>
+            <div class="span2 botones">
+				<a href="contacto.html">CONTACTO</a>				
+			</div>
+		</div>
+	</div><!-- container -->
+
+	<!-- Scripts
+  ================================================== -->
+	<script type="text/javascript">
+		var canvas;
+		var ctx;
+		var background;
+		var cloud;
+		var cloud_x;
+		function init() {
+			canvas = document.getElementById("micanvas");
+			width = canvas.width;
+			height = canvas.height;
+			ctx = canvas.getContext("2d");
+			// init background 
+			background = new Image();
+			background.src = 'images/blanco.png';
+			// init cloud
+			cloud = new Image();
+			cloud.src = 'images/cielo.png';
+			cloud.onload = function(){
+				cloud_x = -cloud.width;
+			};
+			return setInterval(main_loop, 10);
+		}
+		function update(){
+			cloud_x += 0.5;
+			if (cloud_x > width ) {
+				cloud_x = -cloud.width;
+			}
+		}
+		function draw() {
+			ctx.drawImage(background,0,0);
+			ctx.drawImage(cloud, cloud_x, 0);
+		}
+		function main_loop() {
+			draw();
+			update();
+		}
+		init();
+	</script>
+    
+	<script src="js/jquery.min-1.8.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/background.js"></script>
+    <script type="text/javascript">
+		var speed = 2000;
+		$(document).ready(function () {
+			$("#logo").hide();
+			$("#menu").hide();
+			$('html').css({'background-position': '0px 40%'}). 
+        	animate({'background-position': '0px 60%'}, speed, function(){
+					$("#menu").fadeIn(2000, function(){
+					$("#logo").fadeIn(2000);
+					});
+				});
+			});
+	</script>   
+</body>
+</html>
